@@ -22,7 +22,14 @@ export default function Subject(){
             <div>
                 <NavBar usn={usn}/>
                 Subject {sub}
-    
+                <nav aria-label="breadcrumb">
+                    <ol className="breadcrumb">
+                        <button className="breadcrumb-item" onClick={()=>{nav('/home',{state:usn})}}>Semester</button>
+                        <button className="breadcrumb-item" onClick={()=>{nav('/notes/'+sem,{state:usn})}}>Department</button>
+                        <button className="breadcrumb-item" onClick={()=>{nav('/notes/dept/'+dept,{state:{sem:sem,usn:usn}})}}>Subject</button>
+                        <li className="breadcrumb-item active" aria-current="page">Unit</li>
+                    </ol>
+                </nav>
                 <div className="grid text-center" style={{display:'flex',gap:'2rem'}}>
                 {units.map(unit=>{
                                     return(

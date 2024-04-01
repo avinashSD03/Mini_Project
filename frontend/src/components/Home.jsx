@@ -9,7 +9,6 @@ export default function Home(){
     const usn=loc.state;
 
     const sems=[1,2,3,4,5,6,7,8];
-    console.log(sems)
 
     function handleClick(sem){
         nav('/notes/'+sem,{state:usn})

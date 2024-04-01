@@ -13,7 +13,6 @@ export default function Notes(){
     const loc=useLocation();
     const usn=loc.state;
 
-
     function handleClick(dept){
         nav('/notes/dept/'+dept,{state:{sem:sem,usn:usn}})
     }
@@ -31,15 +30,20 @@ export default function Notes(){
             <div>
                 <NavBar usn={usn}/>
                 Semester {sem}
-                
-                <div className="grid text-center" style={{display:'flex',gap:'2rem'}}>
+                <nav aria-label="breadcrumb">
+                    <ol className="breadcrumb">
+                        <button className="breadcrumb-item" onClick={()=>{nav('/home',{state:usn})}}>Semester</button>
+                        <li className="breadcrumb-item active" aria-current="page">Department</li>
+                    </ol>
+                </nav>
+                <div classNameName="grid text-center" style={{display:'flex',gap:'2rem'}}>
                 {uniqueDept.map(dept=>{
                                     return(
-                                        <div class="g-col-6" onClick={()=>handleClick(dept.up_dept)} style={{cursor:'pointer'}}>
-                                            <div class="card text-bg-dark mb-3" style={{maxWidth:'18rem'}}>
-                                                {/* <div class="card-header">Header</div> */}
-                                                <div class="card-body">
-                                                    <h5 class="card-title">{dept.up_dept}</h5>
+                                        <div className="g-col-6" onClick={()=>handleClick(dept.up_dept)} style={{cursor:'pointer'}}>
+                                            <div className="card text-bg-dark mb-3" style={{maxWidth:'18rem'}}>
+                                                {/* <div className="card-header">Header</div> */}
+                                                <div className="card-body">
+                                                    <h5 className="card-title">{dept.up_dept}</h5>
                                                 </div>
                                             </div>
                                         </div>

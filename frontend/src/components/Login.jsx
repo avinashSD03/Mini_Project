@@ -31,8 +31,8 @@ export default function Login(){
             })
             .then((response)=>{
                 if(response.data==="logged in") {
-                    // nav('/home',{state:authUser.usn})
-                    alert("successful login")
+                    nav('/home',{state:authUser.usn})
+                    // alert("successful login")
                 }
                 else{
                     alert(response.data)

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Axios from "axios";
 import NavBar from "./NavBar";
 
 export default function Unit(){
 
+    const nav=useNavigate();
     const param=useParams();
     const unit=param.unitId;
     const loc=useLocation();
@@ -31,6 +32,15 @@ export default function Unit(){
             <div>
                 <NavBar usn={usn}/>
                 Unit {unit}
+                <nav aria-label="breadcrumb">
+                    <ol className="breadcrumb">
+                        <button className="breadcrumb-item" onClick={()=>{nav('/home',{state:usn})}}>Semester</button>
+                        <button className="breadcrumb-item" onClick={()=>{nav('/notes/'+sem,{state:usn})}}>Department</button>
+                        <button className="breadcrumb-item" onClick={()=>{nav('/notes/dept/'+dept,{state:{sem:sem,usn:usn}})}}>Subject</button>
+                        <button className="breadcrumb-item" onClick={()=>{nav('/notes/dept/subject/'+unit,{state:{sem:sem,dept:dept,sub:sub,usn:usn}})}}>Unit</button>
+                        <li className="breadcrumb-item active" aria-current="page">Notes</li>
+                    </ol>
+                </nav>
                 <button className="btn btn-sm btn-secondary" >
                     Filter
                 </button>

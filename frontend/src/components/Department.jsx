@@ -10,7 +10,6 @@ export default function Department(){
     const nav=useNavigate();
     const loc=useLocation();
     const {sem,usn}=loc.state;
-
     const [uniqueSub,setUniqueSub]=useState([]);
 
 
@@ -21,7 +20,6 @@ export default function Department(){
     async function getUnique_Subject(){
         const response=await Axios.get(`http://localhost:3001/getUniqueSubject/${sem}-${dept}`)
         setUniqueSub(response.data)
-        console.log(uniqueSub)
     }
     useEffect(()=>{
         getUnique_Subject();
@@ -32,7 +30,13 @@ export default function Department(){
             <div>
                 <NavBar usn={usn}/>
                 Department {dept}
-    
+                <nav aria-label="breadcrumb">
+                    <ol className="breadcrumb">
+                        <button className="breadcrumb-item" onClick={()=>{nav('/home',{state:usn})}}>Semester</button>
+                        <button className="breadcrumb-item" onClick={()=>{nav('/notes/'+sem,{state:usn})}}>Department</button>
+                        <li className="breadcrumb-item active" aria-current="page">Subject</li>
+                    </ol>
+                </nav>
                 <div className="grid text-center" style={{display:'flex',gap:'2rem'}}>
                 {uniqueSub.map(sub=>{
                                     return(
