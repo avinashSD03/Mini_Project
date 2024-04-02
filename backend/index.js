@@ -17,7 +17,7 @@ env.config();
 
 app.use(
     session({
-      secret: process.env.SESSION_SECRET,
+      secret: "TOPSECRETWORD",
       resave: false,
       saveUninitialized: true,
     })
@@ -38,7 +38,7 @@ const db = new pg.Client({
   });
   db.connect();
 
-const dir=process.env.DIR_PATH
+const dir="/Users/AVINASH DIXIT/Desktop/My Files/WebDev/Mini_Project/frontend/public/files"
 const imageUpload = multer({
     storage: multer.diskStorage(
         {
