@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate} from "react-router-dom";
+import { useLocation} from "react-router-dom";
 import Axios from "axios";
 import NavBar from "./NavBar";
 
@@ -7,8 +7,6 @@ export default function My_Uploads(){
 
     const loc=useLocation();
     const usn=loc.state;
-
-    const nav=useNavigate()
 
     const [myupload,setUpload]=useState([]);
 
@@ -31,11 +29,8 @@ export default function My_Uploads(){
         up_other:"",
     });
 
-    // const [editfile,setFile]=useState("")
-
     function handleChange(event){
         const {name,value}=event.target;
-        console.log(event.target)
         setNotes(prevNote => {
             return {...prevNote,
                 [name]:value
@@ -60,7 +55,6 @@ export default function My_Uploads(){
                 else alert("invalid upload")
             })
             
-            // setFile("")
         }catch(err){
             console.log(err)
         }
@@ -69,7 +63,6 @@ export default function My_Uploads(){
     async function handleEdit(fileName){
         const response=await Axios.get(`http://localhost:3001/getEditUploads/${usn}-${fileName}`)
         setNotes(response.data[0])
-        console.log(response.data[0])
     }
 
     async function getMyUploads(){
@@ -151,10 +144,6 @@ export default function My_Uploads(){
                         </div>
                     </form>
                 </div>
-                {/* <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div> */}
                 </div>
             </div>
             </div>
