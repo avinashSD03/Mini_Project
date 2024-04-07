@@ -30,6 +30,7 @@ import Department from './components/Department';
 import Subject from './components/Subject';
 import Unit from './components/Unit';
 import MyUploads from './components/MyUploads';
+import Admin from './components/Admin';
 import './index.css';
 import {createBrowserRouter,RouterProvider} from 'react-router-dom';
 
@@ -88,6 +89,11 @@ const routes=createBrowserRouter([
     {
         path:'/notes/dept/subject/unit/:unitId',
         element:<Unit />,
+        errorElement:<div>Error: 404 Not Found </div>
+    },
+    {
+        path:'/admin',
+        element:<Admin />,
         errorElement:<div>Error: 404 Not Found </div>
     },
 

@@ -16,5 +16,6 @@ create table uploads(
 	up_unit int,
 	up_fileName varchar(255),
 	up_mimeType varchar(255),
-	up_other varchar(255)
+	up_other varchar(255),
+	up_isvalid BOOLEAN
 );

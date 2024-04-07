@@ -134,6 +134,16 @@ app.get('/filterDocument/:type',async(req,res)=>{
   }
 })
 
+app.get('/adminView',async(req,res)=>{
+  const queryRes=await db.query("SELECT * FROM uploads");
+  res.json(queryRes.rows);
+})
+app.get('/currentUser/:usn',async(req,res)=>{
+  const {usn}=req.params;
+  const queryRes=await db.query("SELECT * FROM users WHERE u_usn=$1",[usn]);
+  res.json(queryRes.rows[0]);
+})
+
 app.put('/updateUpload',async(req,res)=>{
     const {usn,dept,sem,subject,unit,rsc}=req.body;
     await db.query("UPDATE uploads SET up_dept=$1,up_sem=$2,up_sub=$3,up_unit=$4,up_other=$5 WHERE up_usn=$6",[dept,sem,subject,unit,rsc,usn])
@@ -144,6 +154,12 @@ app.post('/delMyUploads',async(req,res)=>{
   const {usn,file}=req.body;
   await db.query("DELETE FROM uploads WHERE up_usn=$1 AND up_filename=$2",[usn,file]);
   res.json("Deletion Successful")
+})
+
+app.post('/adminValidate',async(req,res)=>{
+  const {target,status}=req.body;
+  await db.query("UPDATE uploads SET up_isvalid=$1 WHERE up_filename=$2",[status,target]);
+  res.json("Update Successful");
 })
 
 app.get('/',(req,res)=>{
