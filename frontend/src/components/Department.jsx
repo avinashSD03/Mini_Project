@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Axios from "axios";
 import NavBar from "./NavBar";
+import Header from "./Header";
+
 
 export default function Department(){
 
@@ -27,9 +29,12 @@ export default function Department(){
 
 
         return(
-            <div>
+            <div className="flex min-h-screen w-screen w-full bg-slate-400">
                 <NavBar usn={usn}/>
-                Department {dept}
+                    <div class="flex h-full w-full flex-col">
+                    <Header usn={usn}
+                            isHome={false}
+                    />
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
                         <button className="breadcrumb-item" onClick={()=>{nav('/home',{state:usn})}}>Semester</button>
@@ -37,22 +42,20 @@ export default function Department(){
                         <li className="breadcrumb-item active" aria-current="page">Subject</li>
                     </ol>
                 </nav>
-                <div className="grid text-center" style={{display:'flex',gap:'2rem'}}>
+                <div class="flex flex-wrap gap-x-20 gap-y-12">
                 {uniqueSub.map(sub=>{
                                     return(
-                                        <div class="g-col-6" onClick={()=>handleClick(sub.up_sub)} style={{cursor:'pointer'}}>
-                                            <div class="card text-bg-dark mb-3" style={{maxWidth:'18rem'}}>
-                                                {/* <div class="card-header">Header</div> */}
-                                                <div class="card-body">
-                                                    <h5 class="card-title">{sub.up_sub}</h5>
-                                                </div>
-                                            </div>
+                                        <div class="rounded-xl text-2xl bg-gradient-to-l from-slate-800 to-violet-900 p-10 text-gray-300 hover:shadow-xl hover:shadow-violet-900  mr-4" 
+                                                onClick={()=>handleClick(sub.up_sub)} style={{cursor:'pointer'}}>
+                                                
+                                                {sub.up_sub}
+                                        
                                         </div>
                                     )
                                     })
                 }
                 </div>
-    
+                </div>
             </div>
         )
     

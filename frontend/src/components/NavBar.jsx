@@ -24,7 +24,7 @@ export default function NavBar(props){
                 </svg>
                 </label>
                 <nav aria-label="Sidebar Navigation" class="peer-checked:w-64 left-0 z-10 flex h-screen w-0 flex-col overflow-hidden bg-gradient-to-l from-slate-800 to-violet-900 text-white transition-all md:h-screen md:w-64 lg:w-72">
-                <div onClick={()=>nav('/home',{state:usn})} class="mt-6 mb-2 cursor-pointer text-3xl text-gray-300 py-2 pl-10 md:mt-10">
+                <div onClick={()=>nav('/home',{state:usn})} class="mt-6 mb-8 cursor-pointer text-3xl text-gray-300 py-2 pl-10 md:mt-10">
                     EngineerEase
                 </div>
                 <ul class="mt-2 md:mt-20">

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useLocation} from "react-router-dom";
 import Axios from "axios";
 import NavBar from "./NavBar";
+import Header from "./Header";
+
 
 export default function My_Uploads(){
 
@@ -74,11 +76,14 @@ export default function My_Uploads(){
     },[])
 
     return (
-        <div>
-            <NavBar usn={usn}/>
-        
-        <div>
-            My Upload {usn}
+        <div className="flex min-h-screen w-screen w-full bg-slate-400">
+        <NavBar usn={usn}/>
+
+        <div class="flex h-full w-full flex-col">
+            
+            <Header usn={usn}
+                    isHome={false}
+            />
             <div className="grid text-center" style={{display:'flex',gap:'2rem'}}>
                 {myupload.map(upload=>{
                     const name_with_extension=upload.up_filename.split('_')[1]

@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useLocation} from 'react-router-dom';
 import Axios from "axios";
 import NavBar from "./NavBar";
+import Header from "./Header";
+
+
 export default function Upload(){
 
     const [newNotes,setNotes]=useState({
@@ -61,10 +64,14 @@ export default function Upload(){
         }
     }
         return(
-            <div>
-            <NavBar usn={usn}/>
-            <div>
-                Upload Page {usn}
+            <div className="flex min-h-screen w-screen w-full bg-slate-400">
+                <NavBar usn={usn}/>
+
+                <div class="flex h-full w-full flex-col">
+            
+                    <Header usn={usn}
+                            isHome={false}
+                    />
                 <form onSubmit={handleSubmit}>
                     
                     <div class="dropdown">
