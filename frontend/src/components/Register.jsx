@@ -76,8 +76,8 @@ export default function Register(){
                             <form className="mb-4" onSubmit={handleRegister}>
                                 <div style={{display:'flex',gap:'1rem'}}>
                                     <div className="mb-4" style={{flex:'1 1 auto',width:'50%'}}>
-                                        <label for="email" className="mb-2 inline-block text-xs font-medium uppercase text-violet-900">Student Name</label>
-                                        <input className="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow" 
+                                        <label for="email" className="mb-2 inline-block text-sm font-medium uppercase text-violet-950">Student Name</label>
+                                        <input className="block w-full cursor-text appearance-none rounded-md border bg-gradient-to-l from-slate-800 to-violet-900 text-white border-gray-400 bg--100 py-2 px-3 text-sm outline-none" 
                                                 id="email" 
                                                 type="text" 
                                                 placeholder="Student Name" 
@@ -88,8 +88,8 @@ export default function Register(){
                                         <span className="my-2 block"></span>
                                     </div>
                                     <div className="mb-4" style={{flex:'1 1 auto',width:'50%'}}>
-                                        <label for="email" className="mb-2 inline-block text-xs font-medium uppercase text-violet-900">USN</label>
-                                        <input className="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow" 
+                                        <label for="email" className="mb-2 inline-block text-sm font-medium uppercase text-violet-950">USN</label>
+                                        <input className="block w-full cursor-text appearance-none rounded-md border bg-gradient-to-l from-slate-800 to-violet-900 text-white border-gray-400 bg--100 py-2 px-3 text-sm outline-none" 
                                                 id="email" 
                                                 type="text" 
                                                 placeholder="USN" 
@@ -102,8 +102,8 @@ export default function Register(){
                                 </div>
                                 <div style={{display:'flex',gap:'1rem'}}>
                                     <div className="mb-4" style={{flex:'1 1 auto',width:'50%'}}>
-                                        <label for="email" className="mb-2 inline-block text-xs font-medium uppercase text-violet-900">Semester</label>
-                                        <input className="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow" 
+                                        <label for="email" className="mb-2 inline-block text-sm font-medium uppercase text-violet-950">Semester</label>
+                                        <input className="block w-full cursor-text appearance-none rounded-md border bg-gradient-to-l from-slate-800 to-violet-900 text-white border-gray-400 bg--100 py-2 px-3 text-sm outline-none" 
                                                 id="email" 
                                                 type="number"
                                                 min="1"
@@ -116,9 +116,9 @@ export default function Register(){
                                         <span className="my-2 block"></span>
                                     </div>
                                     <div className="mb-4" style={{flex:'1 1 auto',width:'50%'}}>
-                                        <label for="email" className="mb-2 inline-block text-xs font-medium uppercase text-violet-900">Department</label>
-                                        <select className="block w-full cursor-pointer appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow" >
-                                                <option>Select</option>
+                                        <label for="email" className="mb-2 inline-block text-sm font-medium uppercase text-violet-950">Department</label>
+                                            <select id="email" class="bg-gradient-to-l from-slate-800 to-violet-900 text-gray-300 border cursor-pointer text-sm rounded-md outline-none block w-full py-2 px-3 dark:bg-violet-950">
+                                                <option selected>Select</option>
                                                 <option value="CS">Computer Science</option>
                                                 <option value="EC">Electronics and Communication</option>
                                                 <option value="EE">Electrical and Electronics</option>
@@ -127,8 +127,8 @@ export default function Register(){
                                     </div>
                                 </div>
                                 <div className="mb-4">
-                                    <label for="email" className="mb-2 inline-block text-xs font-medium uppercase text-violet-900">Set Password</label>
-                                    <input className="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow" 
+                                    <label for="email" className="mb-2 inline-block text-sm font-medium uppercase text-violet-950">Set Password</label>
+                                    <input className="block w-full cursor-text appearance-none rounded-md border bg-gradient-to-l from-slate-800 to-violet-900 text-white border-gray-400 bg--100 py-2 px-3 text-sm outline-none" 
                                                 id="email" 
                                                 type="password" 
                                                 placeholder="**********" 
@@ -140,11 +140,11 @@ export default function Register(){
                                 </div>
                                 <div className="flex items-center" >
                                     <div style={{display:'flex', flexDirection:'column',width:'100%'}}>
-                                        <button className="grid w-full cursor-pointer select-none rounded-md border border-indigo-500 bg-gradient-to-l from-slate-800 to-violet-900 py-2 px-5 text-center align-middle text-sm text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
+                                        <button className="grid w-full cursor-pointer select-none rounded-md border border-indigo-500 bg-gradient-to-l from-slate-800 to-violet-900 py-2 px-5 text-center align-middle text-md text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
                                                  type="submit">Register</button>
                                         <div style={{display:'flex', flexDirection:'column',alignItems:'center',marginTop:'2rem'}}>
                                             <div className="mb-4 text-xl font-black leading-4 sm:text-xl xl:text-xl">Already Have an Account?</div> 
-                                            <Link className="grid w-full cursor-pointer select-none rounded-md border border-indigo-500 bg-gradient-to-l from-slate-800 to-violet-900 py-2 px-5 text-center align-middle text-sm text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
+                                            <Link className="grid w-full cursor-pointer select-none rounded-md border border-indigo-500 bg-gradient-to-l from-slate-800 to-violet-900 py-2 px-5 text-center align-middle text-md text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
                                                  style={{width:'50%'}} to={'/login'}>LOGIN</Link>
                                         </div>
                                     </div>

@@ -75,8 +75,8 @@ export default function Login(){
 
                     <form className="mb-4" onSubmit={handleLogIn}>
                     <div className="mb-4">
-                        <label for="email" className="mb-2 inline-block text-xs font-medium uppercase text-violet-900">USN</label>
-                        <input className="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow" 
+                        <label for="email" className="mb-2 inline-block text-sm font-medium uppercase text-violet-950">USN</label>
+                        <input className="block w-full cursor-text appearance-none rounded-md border bg-gradient-to-l from-slate-800 to-violet-900 text-white border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-white focus:shadow" 
                             id="email" 
                             type="text" 
                             placeholder="USN" 
@@ -87,10 +87,10 @@ export default function Login(){
                     </div>
                     <div className="mb-4">
                         <div className="flex justify-between">
-                        <label className="mb-2 inline-block text-xs font-medium uppercase text-violet-900" for="password">Password</label>
+                        <label className="mb-2 inline-block text-sm font-medium uppercase text-violet-950" for="password">Password</label>
                         </div>
                         <div className="relative flex w-full flex-wrap items-stretch">
-                        <input className="relative block flex-auto cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow" 
+                        <input className="relative block flex-auto cursor-text appearance-none rounded-md border border-gray-400 bg-gradient-to-l from-slate-800 to-violet-900 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-white focus:shadow" 
                             type="password" 
                             id="password" 
                             onChange={handleChange} 
@@ -101,11 +101,11 @@ export default function Login(){
                     </div>
                     <div className="flex items-center" >
                         <div style={{display:'flex', flexDirection:'column',width:'100%'}}>
-                            <button className="grid w-full cursor-pointer select-none rounded-md border border-indigo-500 bg-gradient-to-l from-slate-800 to-violet-900 py-2 px-5 text-center align-middle text-sm text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
+                            <button className="grid w-full cursor-pointer select-none rounded-md border border-indigo-500 bg-gradient-to-l from-slate-800 to-violet-900 py-2 px-5 text-center align-middle text-md text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
                                         type="submit">Login</button>
                             <div style={{display:'flex', flexDirection:'column',alignItems:'center',marginTop:'2rem'}}>
                                 <div className="mb-4 text-xl font-black leading-4 sm:text-xl xl:text-xl">New User?</div> 
-                                <Link className="grid w-full cursor-pointer select-none rounded-md border border-indigo-500 bg-gradient-to-l from-slate-800 to-violet-900 py-2 px-5 text-center align-middle text-sm text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
+                                <Link className="grid w-full cursor-pointer select-none rounded-md border border-indigo-500 bg-gradient-to-l from-slate-800 to-violet-900 py-2 px-5 text-center align-middle text-md text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
                                         style={{width:'50%'}} to={'/register'}>REGISTER</Link>
                             </div>
                         </div>

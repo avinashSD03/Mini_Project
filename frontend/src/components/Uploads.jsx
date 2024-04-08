@@ -64,14 +64,12 @@ export default function Upload(){
         }
     }
         return(
-            <div className="flex min-h-screen w-screen w-full bg-slate-400">
+            <div className="flex min-h-screen w-screen w-full bg-gray-300">
                 <NavBar usn={usn}/>
 
                 <div class="flex h-full w-full flex-col">
             
-                    <Header usn={usn}
-                            isHome={false}
-                    />
+                    <Header usn={usn} />
                 <form onSubmit={handleSubmit}>
                     
                     <div class="dropdown">
@@ -109,7 +107,6 @@ export default function Upload(){
     
                     <button className="btn btn-success" type="submit">Upload</button>
                 </form>
-                {/* <button className="btn btn-primary" onClick={()=>nav('/home',{state:usn})}>Back to Home</button> */}
             </div>
             </div>
         )

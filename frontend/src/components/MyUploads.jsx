@@ -76,28 +76,22 @@ export default function My_Uploads(){
     },[])
 
     return (
-        <div className="flex min-h-screen w-screen w-full bg-slate-400">
+        <div className="flex min-h-screen w-screen w-full bg-gray-300">
         <NavBar usn={usn}/>
 
         <div class="flex h-full w-full flex-col">
             
-            <Header usn={usn}
-                    isHome={false}
-            />
-            <div className="grid text-center" style={{display:'flex',gap:'2rem'}}>
+            <Header usn={usn} />
+            <div class="flex flex-wrap gap-x-20 gap-y-12 p-4">
                 {myupload.map(upload=>{
                     const name_with_extension=upload.up_filename.split('_')[1]
                     const name=name_with_extension.split(".")[0]
                     return(
-                        <div class="g-col-6" style={{cursor:'pointer'}}>
-                            <div class="card text-bg-dark mb-3" style={{maxWidth:'18rem'}}>
-                                <div class="card-body">
-                                    <h5 class="card-title">{name}</h5>
-                                </div>
-                                <div style={{display:'flex'}}>
-                                    <button type="button" class="card-header btn btn-primary" onClick={()=>handleDelete(upload.up_filename)} style={{width:'50%'}}>Del</button>
-                                    <button type="button" class="card-header btn btn-primary" onClick={()=>handleEdit(upload.up_filename)} style={{width:'50%'}} data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
-                                </div>
+                        <div className="flex justify-between rounded-xl text-2xl bg-gradient-to-l from-slate-800 to-violet-900 p-8 text-gray-300 hover:shadow-xl hover:shadow-violet-900 sm:w-1/2 md:w-1/4" >
+                            <div className="text-gray-300">{name}</div>
+                            <div className="flex justify-between w-2/5">
+                                <button type="button" class="fa fa-pencil text-gray-300" onClick={()=>handleEdit(upload.up_filename)} style={{width:'50%'}} data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
+                                <button type="button" class="fa fa-trash-o text-gray-300" onClick={()=>handleDelete(upload.up_filename)} style={{width:'50%'}}></button>
                             </div>
                         </div>
                     )
@@ -108,44 +102,43 @@ export default function My_Uploads(){
 
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                <div class="modal-content">
+                <div class="modal-content bg-gray-300">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h1 class="modal-title fs-5 text-violet-950 font-bold" id="exampleModalLabel">Edit Your Resource</h1>
+                    <button type="button" class="btn-close text-violet-950" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form onSubmit={handleSubmit}>
                         
                         <div class="dropdown">
-                            <select class="form-control" name="up_dept" value={editNotes.up_dept} onChange={handleChange}>
-                                <option>Department</option>
+                            <label className="mb-2 inline-block text-sm font-medium uppercase text-violet-950" for="floatingInput5">Department</label>
+                            <select id="flotingInput5" class="bg-gradient-to-l from-slate-800 to-violet-900 text-gray-300 border cursor-pointer text-sm rounded-md outline-none block w-full py-2 px-3 dark:bg-violet-950" name="up_dept" value={editNotes.up_dept} onChange={handleChange}>
                                 <option value="CS">Computer Science</option>
                                 <option value="EC">Electronics and Communication</option>
                                 <option value="EE">Electrical and Electronics</option>
                             </select> 
                         </div>
         
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput2" placeholder="Semester" onChange={handleChange} name="up_sem" value={editNotes.up_sem}/>
-                            <label for="floatingInput2">Semester</label>
+                        <div class="mb-2 mt-2">
+                            <label className="mb-2 inline-block text-sm font-medium uppercase text-violet-950" for="floatingInput2">Semester</label>
+                            <input type="text" class="block w-full cursor-text appearance-none rounded-md border bg-gradient-to-l from-slate-800 to-violet-900 text-white border-gray-400 bg--100 py-2 px-3 text-sm outline-none" id="floatingInput2" placeholder="Semester" onChange={handleChange} name="up_sem" value={editNotes.up_sem}/>
                         </div>
         
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput1" placeholder="Subject" onChange={handleChange} name="up_sub" value={editNotes.up_sub}/>
-                            <label for="floatingInput1">Subject</label>
+                        <div class="mb-2 mt-2">
+                            <label className="mb-2 inline-block text-sm font-medium uppercase text-violet-950" for="floatingInput1">Subject</label>
+                            <input type="text" class="block w-full cursor-text appearance-none rounded-md border bg-gradient-to-l from-slate-800 to-violet-900 text-white border-gray-400 bg--100 py-2 px-3 text-sm outline-none" id="floatingInput1" placeholder="Subject" onChange={handleChange} name="up_sub" value={editNotes.up_sub}/>
                         </div>
         
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput1" placeholder="Unit" onChange={handleChange} name="up_unit" value={editNotes.up_unit}/>
-                            <label for="floatingInput1">Unit</label>
+                        <div class="mb-2 mt-2">
+                            <label className="mb-2 inline-block text-sm font-medium uppercase text-violet-950" for="floatingInput4">Unit</label>
+                            <input type="text" class="block w-full cursor-text appearance-none rounded-md border bg-gradient-to-l from-slate-800 to-violet-900 text-white border-gray-400 bg--100 py-2 px-3 text-sm outline-none" id="floatingInput4" placeholder="Unit" onChange={handleChange} name="up_unit" value={editNotes.up_unit}/>
                         </div>
                         
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput3" placeholder="Other Resources" onChange={handleChange} name="up_other" value={editNotes.up_other}/>
-                            <label for="floatingInput3">Other Resources</label>
-                        </div>
+                        <div class="mb-2 mt-2">
+                            <label className="mb-2 inline-block text-sm font-medium uppercase text-violet-950" for="floatingInput3">Other Resources</label>
+                            <input type="text" class="block w-full cursor-text appearance-none rounded-md border bg-gradient-to-l from-slate-800 to-violet-900 text-white border-gray-400 bg--100 py-2 px-3 text-sm outline-none" id="floatingInput3" placeholder="Other Resources" onChange={handleChange} name="up_other" value={editNotes.up_other}/>                        </div>
                         <div className="modal-footer">
-                            <button className="btn btn-success" type="submit" data-bs-dismiss="modal">Save</button>
+                            <button className="border rounded-2xl bg-gradient-to-l from-slate-800 to-violet-900 text-gray-300 px-4 py-2 hover:shadow-lg hover:shadow-violet-900" type="submit" data-bs-dismiss="modal">Save</button>
                         </div>
                     </form>
                 </div>

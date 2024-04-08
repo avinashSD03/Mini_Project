@@ -31,35 +31,33 @@ export default function Unit(){
     }
 
         return(
-            <div className="flex min-h-screen w-screen w-full bg-slate-400">
+            <div className="flex min-h-screen w-screen w-full bg-gray-300">
                 <NavBar usn={usn}/>
                     <div class="flex h-full w-full flex-col">
-                    <Header usn={usn}
-                            isHome={false}
-                    />
-                <nav aria-label="breadcrumb">
-                    <ol className="breadcrumb">
-                        <button className="breadcrumb-item" onClick={()=>{nav('/home',{state:usn})}}>Semester</button>
-                        <button className="breadcrumb-item" onClick={()=>{nav('/notes/'+sem,{state:usn})}}>Department</button>
-                        <button className="breadcrumb-item" onClick={()=>{nav('/notes/dept/'+dept,{state:{sem:sem,usn:usn}})}}>Subject</button>
-                        <button className="breadcrumb-item" onClick={()=>{nav('/notes/dept/subject/'+unit,{state:{sem:sem,dept:dept,sub:sub,usn:usn}})}}>Unit</button>
-                        <li className="breadcrumb-item active" aria-current="page">Notes</li>
+                    <Header usn={usn}/>
+
+                <nav aria-label="breadcrumb" className="flex w-fit m-4 p-2 border rounded-2xl bg-gradient-to-l from-slate-800 to-violet-900">
+                    <ol className="breadcrumb my-2">
+                        <button className="text-gray-300" onClick={()=>{nav('/home',{state:usn})}}>Semester &gt;</button>
+                        <button className="text-gray-300" onClick={()=>{nav('/notes/'+sem,{state:usn})}}>Department &gt;</button>
+                        <button className="text-gray-300" onClick={()=>{nav('/notes/dept/'+dept,{state:{sem:sem,usn:usn}})}}>Subject &gt;</button>
+                        <button className="text-gray-300" onClick={()=>{nav('/notes/dept/subject/'+unit,{state:{sem:sem,dept:dept,sub:sub,usn:usn}})}}>Unit &gt;</button>
+                        <li className="!text-gray-400" aria-current="page">Notes</li>
                     </ol>
                 </nav>
-                <button className="btn btn-sm btn-secondary" >
+                <div class="dropdown">
+                <button class="bg-gradient-to-l from-slate-800 to-violet-900 text-gray-300 flex w-fit m-4 p-2 items-center border rounded-2xl dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Filter
                 </button>
-                <button type="button" className="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span className="visually-hidden">Toggle Dropdown</span>
-                </button>
-                <ul className="dropdown-menu">
+                <ul className="dropdown-menu bg-gradient-to-l from-slate-800 to-violet-900">
                         
-                        <li><button className="dropdown-item" onClick={()=> handleType('pdf')} >PDF</button></li>
-                        <li><button className="dropdown-item" onClick={()=> handleType('presentation')} >PPT</button></li>
-                        <li><button className="dropdown-item" onClick={()=> handleType('word')} >Doc</button></li>
-                        <li><button className="dropdown-item" onClick={()=> handleType('other')} >Other</button></li>
+                        <li><button className="dropdown-item bg-gradient-to-l from-slate-800 to-violet-900 text-gray-300 hover:text-gray-300 hover:font-bold" onClick={()=> handleType('pdf')} >PDF</button></li>
+                        <li><button className="dropdown-item bg-gradient-to-l from-slate-800 to-violet-900 text-gray-300 hover:text-gray-300 hover:font-bold" onClick={()=> handleType('presentation')} >PPT</button></li>
+                        <li><button className="dropdown-item bg-gradient-to-l from-slate-800 to-violet-900 text-gray-300 hover:text-gray-300 hover:font-bold" onClick={()=> handleType('word')} >Doc</button></li>
+                        <li><button className="dropdown-item bg-gradient-to-l from-slate-800 to-violet-900 text-gray-300 hover:text-gray-300 hover:font-bold" onClick={()=> handleType('other')} >Other</button></li>
                 </ul>
-                <div class="flex flex-wrap gap-x-20 gap-y-12">
+                </div>
+                <div class="flex flex-wrap gap-x-20 gap-y-12 p-4">
                 {!isFilter?
                     pdf.map(pdf=>{
                         const path="/files/"+pdf.up_filename

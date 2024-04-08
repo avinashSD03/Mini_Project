@@ -27,19 +27,18 @@ export default function Notes(){
     },[])
     
         return(
-                <div className="flex min-h-screen w-screen w-full bg-slate-400">
+                <div className="flex min-h-screen w-screen w-full bg-gray-300">
                 <NavBar usn={usn}/>
                     <div class="flex h-full w-full flex-col">
-                    <Header usn={usn}
-                            isHome={false}
-                    />
-                <nav aria-label="breadcrumb">
-                    <ol className="breadcrumb">
-                        <button className="breadcrumb-item" onClick={()=>{nav('/home',{state:usn})}}>Semester</button>
-                        <li className="breadcrumb-item active" aria-current="page">Department</li>
+                    <Header usn={usn}/>
+                    
+                <nav aria-label="breadcrumb" className="flex w-fit m-4 p-2 border rounded-2xl bg-gradient-to-l from-slate-800 to-violet-900">
+                    <ol className="breadcrumb my-2">
+                        <button className="breadcrumb-item text-gray-300" onClick={()=>{nav('/home',{state:usn})}}>Semester &gt;</button>
+                        <li className="!text-gray-400" aria-current="page">Department</li>
                     </ol>
                 </nav>
-                <div class="flex flex-wrap gap-x-20 gap-y-12">
+                <div class="flex flex-wrap gap-x-20 gap-y-12 p-4">
                 {uniqueDept.map(dept=>{
                                     return(
                                         <div class="rounded-xl text-2xl bg-gradient-to-l from-slate-800 to-violet-900 p-10 text-gray-300 hover:shadow-xl hover:shadow-violet-900  mr-4" 
