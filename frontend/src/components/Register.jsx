@@ -73,7 +73,7 @@ export default function Register(){
                             </div>
                             <h4 className="mb-2 font-medium text-violet-900 xl:text-xl text-center">Welcome to EngineerEase!</h4>
 
-                            <form className="mb-4" onSubmit={handleRegister}>
+                            <form className="mb-4" onSubmit={handleRegister} autoComplete="off">
                                 <div style={{display:'flex',gap:'1rem'}}>
                                     <div className="mb-4" style={{flex:'1 1 auto',width:'50%'}}>
                                         <label for="email" className="mb-2 inline-block text-sm font-medium uppercase text-violet-950">Student Name</label>
@@ -117,7 +117,7 @@ export default function Register(){
                                     </div>
                                     <div className="mb-4" style={{flex:'1 1 auto',width:'50%'}}>
                                         <label for="email" className="mb-2 inline-block text-sm font-medium uppercase text-violet-950">Department</label>
-                                            <select id="email" class="bg-gradient-to-l from-slate-800 to-violet-900 text-gray-300 border cursor-pointer text-sm rounded-md outline-none block w-full py-2 px-3 dark:bg-violet-950">
+                                            <select id="email" class="bg-gradient-to-l from-slate-800 to-violet-900 text-gray-300 border cursor-pointer text-sm rounded-md outline-none block w-full py-2 px-3 dark:bg-violet-950" required>
                                                 <option selected>Select</option>
                                                 <option value="CS">Computer Science</option>
                                                 <option value="EC">Electronics and Communication</option>

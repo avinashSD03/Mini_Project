@@ -73,7 +73,7 @@ export default function Login(){
                     </div>
                     <h4 className="mb-2 font-medium text-violet-900 xl:text-xl text-center">Welcome to EngineerEase!</h4>
 
-                    <form className="mb-4" onSubmit={handleLogIn}>
+                    <form className="mb-4" onSubmit={handleLogIn} autoComplete="off">
                     <div className="mb-4">
                         <label for="email" className="mb-2 inline-block text-sm font-medium uppercase text-violet-950">USN</label>
                         <input className="block w-full cursor-text appearance-none rounded-md border bg-gradient-to-l from-slate-800 to-violet-900 text-white border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-white focus:shadow" 
