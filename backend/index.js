@@ -29,6 +29,7 @@ app.use(cors());
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 const db = new pg.Client({
     user: process.env.DB_USER,
     host: process.env.DB_HOST,
@@ -97,7 +98,8 @@ app.get('/getPdf/:semDeptSubUnit',async(req,res)=>{
   const dept=sem_dept[1];
   const sub=sem_dept[2];
   const unit=sem_dept[3];
-  const queryRes=await db.query("SELECT DISTINCT up_filename FROM uploads WHERE up_sem=$1 AND up_dept=$2 AND up_sub=$3 AND up_unit=$4",[sem,dept,sub,unit]);
+  const valid=true;
+  const queryRes=await db.query("SELECT DISTINCT up_filename FROM uploads WHERE up_sem=$1 AND up_dept=$2 AND up_sub=$3 AND up_unit=$4 AND up_isvalid=$5",[sem,dept,sub,unit,valid]);
   res.json(queryRes.rows);
 })
 
