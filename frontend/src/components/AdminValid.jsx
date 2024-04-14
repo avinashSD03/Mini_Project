@@ -10,7 +10,7 @@ export default function Admin(){
     const email=loc.state;
 
     async function getPDFs(){
-        const response=await Axios.get("http://localhost:3001/adminView")
+        const response=await Axios.get("http://localhost:3001/adminViewValid")
         setPdf(response.data)
     }
     useEffect(()=>{
@@ -30,7 +30,7 @@ export default function Admin(){
     
 
     return(
-        
+
         <div>
             <div className="flex min-h-screen w-screen w-full bg-gray-300">
                 <NavBar usn={email}/>
@@ -38,8 +38,7 @@ export default function Admin(){
                 <div class="flex h-full w-full flex-col">
             
                     <Header usn={email}/>
-                    {allPdf.length===0?<p className="text-violet-900 text-2xl">No New Uploads</p>
-                    :
+
                     <div class="flex flex-wrap gap-x-20 gap-y-12 p-4">
                     {allPdf.map(pdf=>{
                         const path="/files/"+pdf.up_filename
@@ -67,22 +66,15 @@ export default function Admin(){
                                     </div>
                                 </div>
                                 <div class="card-footer flex justify-end">
-                                    <div>
-                                        <button onClick={()=>validate(pdf.up_filename,false)}>
-                                            <span>&#10060;</span>                              
-                                        </button>
-                                        <button onClick={()=>validate(pdf.up_filename,true)}>
-                                            <span>&#9989;</span>                              
-                                        </button>
-                                    </div>
+                                    <button title="Make Invalid?" onClick={()=>validate(pdf.up_filename,!pdf.up_isvalid)}>
+                                        {pdf.up_isvalid?<span>&#10060;</span>:<span>&#9989;</span>}                                       
+                                    </button>
                                 </div>
                             </div>
-                            
                         )
                         })
                     }
                     </div>
-                    }
                 </div>
             </div>
         </div>

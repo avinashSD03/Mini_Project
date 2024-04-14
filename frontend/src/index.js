@@ -33,6 +33,9 @@ import MyUploads from './components/MyUploads';
 import Admin from './components/Admin';
 import './index.css';
 import {createBrowserRouter,RouterProvider} from 'react-router-dom';
+import AdminLogin from './components/AdminLogin';
+import AdminValid from './components/AdminValid';
+import AdminInvalid from './components/AdminInvalid';
 
 const routes=createBrowserRouter([
     {
@@ -94,6 +97,21 @@ const routes=createBrowserRouter([
     {
         path:'/admin',
         element:<Admin />,
+        errorElement:<div>Error: 404 Not Found </div>
+    },
+    {
+        path:'/adminLogin',
+        element:<AdminLogin />,
+        errorElement:<div>Error: 404 Not Found </div>
+    },
+    {
+        path:'/adminValid',
+        element:<AdminValid />,
+        errorElement:<div>Error: 404 Not Found </div>
+    },
+    {
+        path:'/adminInvalid',
+        element:<AdminInvalid />,
         errorElement:<div>Error: 404 Not Found </div>
     },
 

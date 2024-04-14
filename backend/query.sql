@@ -19,3 +19,15 @@ create table uploads(
 	up_other varchar(255),
 	up_isvalid BOOLEAN
 );
+
+create table admins(
+	a_id serial primary key,
+	a_email varchar(30),
+	a_pswd varchar(30)
+);
+
+select * from uploads up
+inner join users u on
+up.up_usn=u.u_usn;
+-- select * from uploads,users
+-- where uploads.up_usn=users.u_usn;

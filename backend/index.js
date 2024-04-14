@@ -136,8 +136,21 @@ app.get('/filterDocument/:type',async(req,res)=>{
   }
 })
 
+app.get('/allAdmin',async(req,res)=>{
+  const queryRes=await db.query("SELECT * FROM admins");
+  res.json(queryRes.rows);
+})
+
 app.get('/adminView',async(req,res)=>{
-  const queryRes=await db.query("SELECT * FROM uploads");
+  const queryRes=await db.query("SELECT up_usn,up_dept,up_sem,up_sub,up_unit,up_filename,u_name,u_sem,u_dept,up_isvalid FROM uploads up inner join users u on up.up_usn=u.u_usn where up_isvalid=$1",[null]);
+  res.json(queryRes.rows);
+})
+app.get('/adminViewValid',async(req,res)=>{
+  const queryRes=await db.query("SELECT up_usn,up_dept,up_sem,up_sub,up_unit,up_filename,u_name,u_sem,u_dept,up_isvalid FROM uploads up inner join users u on up.up_usn=u.u_usn where up_isvalid=$1",[true]);
+  res.json(queryRes.rows);
+})
+app.get('/adminViewInvalid',async(req,res)=>{
+  const queryRes=await db.query("SELECT up_usn,up_dept,up_sem,up_sub,up_unit,up_filename,u_name,u_sem,u_dept,up_isvalid FROM uploads up inner join users u on up.up_usn=u.u_usn where up_isvalid=$1",[false]);
   res.json(queryRes.rows);
 })
 app.get('/currentUser/:usn',async(req,res)=>{
