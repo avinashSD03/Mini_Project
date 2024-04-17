@@ -7,7 +7,7 @@ import multer from "multer";
 import bcrypt from "bcrypt";
 import passport from "passport";
 import { Strategy } from "passport-local";
-import session from "express-session";
+import session, { Cookie } from "express-session";
 import env from "dotenv";
 
 // ------ Initialization ------
@@ -68,7 +68,7 @@ app.get('/allAdmin',async(req,res)=>{
 })
 
 app.get('/adminView',async(req,res)=>{
-  const queryRes=await db.query("SELECT up_usn,up_dept,up_sem,up_sub,up_unit,up_filename,u_name,u_sem,u_dept,up_isvalid FROM uploads up inner join users u on up.up_usn=u.u_usn where up_isvalid=$1",[null]);
+  const queryRes=await db.query("SELECT up_usn,up_dept,up_sem,up_sub,up_unit,up_filename,u_name,u_sem,u_dept,up_isvalid FROM uploads up inner join users u on up.up_usn=u.u_usn where up_isvalid is null");
   res.json(queryRes.rows);
 })
 
