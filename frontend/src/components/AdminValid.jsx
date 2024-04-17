@@ -17,17 +17,13 @@ export default function Admin(){
         getPDFs();
     },[])
 
-    
     async function validate(file,clicked){
         const response=await Axios.post("http://localhost:3001/adminValidate",{
             target:file,
             status:clicked
         })
-        // alert(response.data)
         window.location.reload()
     }
-
-    
 
     return(
 

@@ -21,17 +21,15 @@ export default function Notes(){
         const response=await Axios.get(`http://localhost:3001/getUniqueDept/${sem}`)
         setUniqueDept(response.data)
     }
-
     useEffect(()=>{
         getUnique_Dept();
     },[])
     
-        return(
-                <div className="flex min-h-screen w-screen w-full bg-gray-300">
-                <NavBar usn={usn}/>
-                    <div class="flex h-full w-full flex-col">
-                    <Header usn={usn}/>
-                    
+    return(
+        <div className="flex min-h-screen w-screen w-full bg-gray-300">
+            <NavBar usn={usn}/>
+            <div class="flex h-full w-full flex-col">
+                <Header usn={usn}/>
                 <nav aria-label="breadcrumb" className="flex w-fit m-4 p-2 border rounded-2xl bg-gradient-to-l from-slate-800 to-violet-900">
                     <ol className="breadcrumb my-2">
                         <button className="breadcrumb-item text-gray-300" onClick={()=>{nav('/home',{state:usn})}}>Semester &gt;</button>
@@ -40,21 +38,18 @@ export default function Notes(){
                 </nav>
                 <div class="flex flex-wrap gap-x-20 gap-y-12 p-4">
                 {uniqueDept.map(dept=>{
-                                    return(
-                                        <div class="rounded-xl text-2xl bg-gradient-to-l from-slate-800 to-violet-900 p-10 text-gray-300 hover:shadow-xl hover:shadow-violet-900  mr-4" 
-                                                onClick={()=>handleClick(dept.up_dept)} style={{cursor:'pointer'}}>
-                                                    
-                                            {dept.up_dept}
-                                        
-                                        </div>
-                                    )
-                                    })
+                    return(
+                        <div class="rounded-xl text-2xl bg-gradient-to-l from-slate-800 to-violet-900 p-10 text-gray-300 hover:shadow-xl hover:shadow-violet-900  mr-4" 
+                                onClick={()=>handleClick(dept.up_dept)} style={{cursor:'pointer'}}>
+                                    
+                            {dept.up_dept}
+                        
+                        </div>
+                    )
+                    })
                 }
                 </div>
-                </div>
             </div>
-            
-        )
-
-   
+        </div>
+    )
 }

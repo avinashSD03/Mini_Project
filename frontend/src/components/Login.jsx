@@ -2,14 +2,12 @@ import React,{useState} from "react";
 import Axios from "axios";
 import { Link, useNavigate} from "react-router-dom";
 
-
 export default function Login(){
 
     const [authUser,setUser]=useState({
         usn:"",
         pswd:""
     })
-    // const [loggedUser,setloggedUser]=useState([]);
     const nav=useNavigate();
 
     function handleChange(event){
@@ -22,9 +20,7 @@ export default function Login(){
     }
 
     function handleLogIn(event){
-        // console.log(authUser)
         event.preventDefault();
-
         try{
                 Axios.post("http://localhost:3001/login",{
                     username:authUser.usn,
@@ -33,7 +29,6 @@ export default function Login(){
             .then((response)=>{
                 if(response.data==="logged in") {
                     nav('/home',{state:authUser.usn})
-                    // alert("successful login")
                 }
                 else{
                     alert(response.data)
@@ -49,7 +44,6 @@ export default function Login(){
         }catch(err){
             console.log(err)
         }
-
     }
 
     return(
@@ -115,8 +109,6 @@ export default function Login(){
                 </div>
             </div>
             </div>
-
         </div>
-
     )
 }

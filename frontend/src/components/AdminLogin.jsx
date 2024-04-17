@@ -4,6 +4,10 @@ import Axios from "axios";
 
 export default function AdminLogin(){
 
+    const [authUser,setUser]=useState({
+        email:"",
+        pswd:""
+    })
     const [admins,setAdmins]=useState([])
     const nav=useNavigate(); 
 
@@ -14,11 +18,6 @@ export default function AdminLogin(){
     useEffect(()=>{
         allAdmins()
     },[]);
-
-    const [authUser,setUser]=useState({
-        email:"",
-        pswd:""
-    })
 
     function handleChange(event){
         const {name,value}=event.target;
@@ -42,7 +41,6 @@ export default function AdminLogin(){
         else{
             nav('/admin',{state:authUser.email})
         }
-        
     }
 
     return(
@@ -105,7 +103,5 @@ export default function AdminLogin(){
             </div>
 
         </div>
-
     )
-
 }

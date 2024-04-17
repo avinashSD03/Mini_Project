@@ -5,6 +5,7 @@ import Header from "./Header";
 import NavBar from "./NavBar";
 
 export default function Admin(){
+
     const [allPdf,setPdf]=useState([]);
     const loc=useLocation();
     const email=loc.state;
@@ -17,17 +18,13 @@ export default function Admin(){
         getPDFs();
     },[])
 
-    
     async function validate(file,clicked){
         const response=await Axios.post("http://localhost:3001/adminValidate",{
             target:file,
             status:clicked
         })
-        // alert(response.data)
         window.location.reload()
     }
-
-    
 
     return(
         

@@ -4,12 +4,18 @@ import Axios from "axios";
 import NavBar from "./NavBar";
 import Header from "./Header";
 
-
 export default function My_Uploads(){
 
     const loc=useLocation();
     const usn=loc.state;
 
+    const [editNotes,setNotes]=useState({
+        up_dept:"",
+        up_sem:"",
+        up_sub:"",
+        up_unit:"",
+        up_other:"",
+    });
     const [myupload,setUpload]=useState([]);
 
     async function handleDelete(fileName){
@@ -23,14 +29,6 @@ export default function My_Uploads(){
         }
     }
 
-    const [editNotes,setNotes]=useState({
-        up_dept:"",
-        up_sem:"",
-        up_sub:"",
-        up_unit:"",
-        up_other:"",
-    });
-
     function handleChange(event){
         const {name,value}=event.target;
         setNotes(prevNote => {
@@ -38,7 +36,6 @@ export default function My_Uploads(){
                 [name]:value
             };
         });
-
     }
     
     async function handleSubmit(event){
@@ -60,8 +57,8 @@ export default function My_Uploads(){
         }catch(err){
             console.log(err)
         }
-
     }
+
     async function handleEdit(fileName){
         const response=await Axios.get(`http://localhost:3001/getEditUploads/${usn}-${fileName}`)
         setNotes(response.data[0])
@@ -98,8 +95,7 @@ export default function My_Uploads(){
                     })
                 }
             </div>
-
-
+            
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content bg-gray-300">

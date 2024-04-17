@@ -1,25 +1,6 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom/client';
-// import './index.css';
-// import App from './App';
-// import reportWebVitals from './reportWebVitals';
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
-
-// // If you want to start measuring performance in your app, pass a function
-// // to log results (for example: reportWebVitals(console.log))
-// // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from "./components/App_Img";
-import App2 from "./components/App_2";
+import {createBrowserRouter,RouterProvider} from 'react-router-dom';
 import Landing from "./components/Landing";
 import Register from "./components/Register";
 import Login from "./components/Login";
@@ -31,11 +12,11 @@ import Subject from './components/Subject';
 import Unit from './components/Unit';
 import MyUploads from './components/MyUploads';
 import Admin from './components/Admin';
-import './index.css';
-import {createBrowserRouter,RouterProvider} from 'react-router-dom';
 import AdminLogin from './components/AdminLogin';
 import AdminValid from './components/AdminValid';
 import AdminInvalid from './components/AdminInvalid';
+import Starred from './components/Starred';
+import './index.css';
 
 const routes=createBrowserRouter([
     {
@@ -114,16 +95,10 @@ const routes=createBrowserRouter([
         element:<AdminInvalid />,
         errorElement:<div>Error: 404 Not Found </div>
     },
-
     {
-        path:'/img',
-        element:<App />,
+        path:'/starred',
+        element:<Starred />,
         errorElement:<div>Error: 404 Not Found </div>
     },
-    {
-        path:'/next',
-        element:<App2/>,
-        errorElement:<div>Error: 404 Not Found </div>
-    }
 ])
 ReactDOM.render(<RouterProvider router={routes}/>,document.getElementById("root"));

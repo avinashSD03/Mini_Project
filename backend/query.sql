@@ -1,7 +1,6 @@
 create table users(
-	u_id serial primary key,
+	u_usn varchar(14) primary key,
 	u_name varchar(30),
-	u_usn varchar(14),
 	u_sem int,
 	u_dept varchar(4),
 	u_pswd varchar(100)

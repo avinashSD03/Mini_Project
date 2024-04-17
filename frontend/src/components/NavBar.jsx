@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function NavBar(props){
+
     const nav=useNavigate();
     const usn=props.usn;
-
 
     function handleLogin(){
         nav('/login')
@@ -13,7 +13,6 @@ export default function NavBar(props){
         if(usn===null) handleLogin();
     },[usn])
     
-
     return(
         usn===null?handleLogin()
         :
@@ -26,6 +25,9 @@ export default function NavBar(props){
                 </svg>
                 </label>
                 <nav aria-label="Sidebar Navigation" class="peer-checked:w-64 left-0 z-10 flex h-screen w-0 flex-col overflow-hidden bg-gradient-to-l from-slate-800 to-violet-900 text-white transition-all md:h-screen md:w-64 lg:w-72">
+                    <span className="mr-2 text-4xl text-violet-500">
+                        {/* <img src={logo} alt='logo'/> */}
+                    </span>
                     <div onClick={()=> !usn.includes("@")?nav('/home',{state:usn}):null} class="mt-16 cursor-pointer text-3xl text-gray-300 py-8 pl-10">
                         EngineerEase
                     </div>
@@ -64,13 +66,11 @@ export default function NavBar(props){
                                 </button>
                             </li>
                             <li class="relative">
-                                <button onClick={()=>nav('/')} class="focus:bg-gray-300 hover:bg-gray-300 hover:text-violet-900 hover:font-bold flex w-full space-x-2 rounded-md px-10 py-4 text-gray-300 focus:outline-none">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                                        </svg>
-                                    </span>
-                                    <span class="text-lg">Logout</span>
+                                <button onClick={()=>nav('/starred',{state:usn})} class="focus:bg-gray-300 hover:bg-gray-300 hover:text-violet-900 hover:font-bold flex w-full space-x-2 rounded-md px-10 py-4 text-gray-300 focus:outline-none">
+                                    <div className="flex justify-center items-center gap-2">
+                                        <span className="h-7 w-6 fa fa-star-o text-xl"></span>
+                                    <span class="text-lg">Starred</span>
+                                    </div>
                                 </button>
                             </li>
                         </ul>
