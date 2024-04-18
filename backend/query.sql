@@ -25,6 +25,12 @@ create table admins(
 	a_pswd varchar(30)
 );
 
+create table star(
+	usn varchar(14) REFERENCES users (u_usn),
+	pdf_id int REFERENCES uploads (up_id),
+	PRIMARY KEY(usn,pdf_id)
+);
+
 select * from uploads up
 inner join users u on
 up.up_usn=u.u_usn;

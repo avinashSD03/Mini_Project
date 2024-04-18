@@ -16,6 +16,7 @@ import AdminLogin from './components/AdminLogin';
 import AdminValid from './components/AdminValid';
 import AdminInvalid from './components/AdminInvalid';
 import Starred from './components/Starred';
+import Recommend from './components/Recommend';
 import './index.css';
 
 const routes=createBrowserRouter([
@@ -98,6 +99,11 @@ const routes=createBrowserRouter([
     {
         path:'/starred',
         element:<Starred />,
+        errorElement:<div>Error: 404 Not Found </div>
+    },
+    {
+        path:'/recommend',
+        element:<Recommend />,
         errorElement:<div>Error: 404 Not Found </div>
     },
 ])
