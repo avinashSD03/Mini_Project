@@ -17,7 +17,7 @@ export default function Recommend(){
         padding: "20px",
     }
     const textInputStyle={
-        width: "40%",
+        width: "25%",
         // padding: "10px",
         // fontSize: "16px",
         // borderRadius: "5px",
@@ -77,14 +77,17 @@ export default function Recommend(){
             <NavBar usn={usn}/>
                 <div class="flex h-full w-full flex-col">
                     <Header usn={usn}/>
+                    <main id="dashboard-main" class="h-[calc(100vh-10rem)] ml-[calc(100vh-24rem)] mt-[calc(100vh-38rem)] overflow-auto px-4 py-10">
                     <div className="border rounded-3xl shadow-xl shadow-violet-900" style={containerStyle}>
                         <h1 className="text-violet-900 text-center text-3xl pb-4">Book Recommendation System</h1>
                         <form style={{textAlign:'center'}} onSubmit={handleRecommend}>
-                            <label className="mb-4 block text-violet-900 text-center text-2xl" for="partial_input">Enter part of a book title:</label>
-                            <input className="py-2 px-3 border rounded-2xl" type="text" onChange={handleChange} style={textInputStyle} id="partial_input" name="partial_input" required />
-                            <button className="mt-2 block w-1/5 border rounded-2xl bg-gradient-to-l from-slate-800 to-violet-900 text-gray-300 px-4 py-2 hover:shadow-lg hover:shadow-violet-900 ml-64" type="submit">Submit</button>
+                            <label className="mb-2 block text-violet-900 text-2xl" for="partial_input">Enter Search Key</label>
+                            <div className="relative">
+                                <input className="py-2 px-3 border rounded-2xl text-center" type="text" onChange={handleChange} style={textInputStyle} id="partial_input" name="partial_input" required autoComplete="off"/>
+                                <button className="absolute top-12 right-56 md:mr-40 sm:mr-2 w-1/8 border rounded-2xl bg-gradient-to-l from-slate-800 to-violet-900 text-gray-300 px-4 py-2 hover:shadow-lg hover:shadow-violet-900 ml-64" type="submit">Submit</button>
+                            </div>
                         </form>
-                        <h2 className="text-violet-900 text-center text-xl my-4">Recommended Books:</h2>
+                        <h2 className="text-violet-900 text-2xl mt-16 mb-6">Recommended Books</h2>
                         <ul style={ulStyle}>
                             {allBooks.map(book=>{
                                 return(
@@ -93,6 +96,7 @@ export default function Recommend(){
                             })}
                         </ul>
                     </div>
+                    </main>
                 </div>
         </div>
     )

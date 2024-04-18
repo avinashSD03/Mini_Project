@@ -21,7 +21,7 @@ export default function Home(){
                 <div class="flex h-full w-full flex-col">
                     <Header usn={usn}/>
                     <div class="h-full overflow-hidden pl-10">
-                        <main id="dashboard-main" class="h-[calc(100vh-10rem)] overflow-auto px-4 py-10">
+                        <main id="dashboard-main" class="h-[calc(100vh-10rem)] ml-[calc(100vh-24rem)] mt-[calc(100vh-38rem)] overflow-auto px-4 py-10">
                             <p class="mb-6 text-3xl font-black text-center text-violet-900">ENGINEERING MADE EFFORTLESS</p>
                             <p class="mb-12 text-2xl font-black text-violet-900">Explore Resources and Collaborate</p>
                             <div class="flex flex-wrap gap-x-20 gap-y-12 ">

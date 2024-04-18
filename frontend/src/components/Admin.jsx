@@ -35,6 +35,8 @@ export default function Admin(){
                 <div class="flex h-full w-full flex-col">
             
                     <Header usn={email}/>
+                    <main id="dashboard-main" class="h-[calc(100vh-10rem)] ml-[calc(100vh-24rem)] mt-[calc(100vh-38rem)] overflow-auto px-4 py-10">
+
                     {allPdf.length===0?<p className="text-violet-900 text-2xl">No New Uploads</p>
                     :
                     <div class="flex flex-wrap gap-x-20 gap-y-12 p-4">
@@ -80,6 +82,7 @@ export default function Admin(){
                     }
                     </div>
                     }
+                    </main>
                 </div>
             </div>
         </div>

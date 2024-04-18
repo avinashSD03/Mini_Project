@@ -17,7 +17,7 @@ export default function NavBar(props){
         usn===null?handleLogin()
         :
         <div>
-            <aside class="fixed bottom-0 z-50 md:relative">
+            <aside class="fixed z-50 md:fixed">
                 <input type="checkbox" class="peer hidden" id="sidebar-open" />
                 <label class="peer-checked:rounded-full peer-checked:left peer-checked:text-gray-300 peer-checked:top-8 absolute top-8 z-20 mx-3 cursor-pointer md:hidden" for="sidebar-open">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
