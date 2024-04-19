@@ -70,7 +70,7 @@ export default function Upload(){
             <div class="flex h-full w-full flex-col">
         
                 <Header usn={usn} />
-                <main id="dashboard-main" class="h-[calc(100vh-10rem)] ml-[calc(100vh-24rem)] mt-[calc(100vh-38rem)] overflow-auto px-4 py-10">
+                <main id="dashboard-main" class="md:h-[calc(100vh-10rem)] md:ml-[calc(100vh-26rem)] md:mt-[calc(100vh-38rem)] sm:h-[calc(100vh-10rem)] sm:ml-[calc(100vh-42rem)] sm:mt-[calc(100vh-36rem)] overflow-auto px-4 py-10">
                 <p className="mt-1 mb-1 text-center text-2xl font-black text-violet-900">Contribute Your Resource</p>
                 <form onSubmit={handleSubmit} className="relative mt-3 flex flex-col px-60 pb-10" autoComplete="off">
                     

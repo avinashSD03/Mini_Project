@@ -77,7 +77,7 @@ export default function Recommend(){
             <NavBar usn={usn}/>
                 <div class="flex h-full w-full flex-col">
                     <Header usn={usn}/>
-                    <main id="dashboard-main" class="h-[calc(100vh-10rem)] ml-[calc(100vh-24rem)] mt-[calc(100vh-38rem)] overflow-auto px-4 py-10">
+                    <main id="dashboard-main" class="md:h-[calc(100vh-10rem)] md:ml-[calc(100vh-26rem)] md:mt-[calc(100vh-40rem)] sm:h-[calc(100vh-10rem)] sm:ml-[calc(100vh-42rem)] sm:mt-[calc(100vh-40rem)] overflow-auto px-4 py-10">
                     <div className="border rounded-3xl shadow-xl shadow-violet-900" style={containerStyle}>
                         <h1 className="text-violet-900 text-center text-3xl pb-4">Book Recommendation System</h1>
                         <form style={{textAlign:'center'}} onSubmit={handleRecommend}>

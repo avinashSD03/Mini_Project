@@ -34,7 +34,7 @@ export default function Admin(){
                 <div class="flex h-full w-full flex-col">
             
                     <Header usn={email}/>
-                    <main id="dashboard-main" class="h-[calc(100vh-10rem)] ml-[calc(100vh-24rem)] mt-[calc(100vh-38rem)] overflow-auto px-4 py-10">
+                    <main id="dashboard-main" class="md:h-[calc(100vh-10rem)] md:ml-[calc(100vh-24rem)] md:mt-[calc(100vh-36rem)] sm:h-[calc(100vh-10rem)] sm:ml-[calc(100vh-42rem)] sm:mt-[calc(100vh-36rem)] overflow-auto px-4 py-10">
                     <div class="flex flex-wrap gap-x-20 gap-y-12 p-4">
                     {allPdf.map(pdf=>{
                         const path="/files/"+pdf.up_filename

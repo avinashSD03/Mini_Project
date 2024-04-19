@@ -16,7 +16,7 @@ export default function Header(props){
     },[])
 
     return(
-        <header class="fixed w-full z-48 flex flex-col bg-gradient-to-l from-violet-900 to-slate-800 items-center justify-end gap-x-4 px-4 py-4 sm:flex-row md:h-20">
+        <header class="fixed w-full z-49 flex flex-col bg-gradient-to-l from-violet-900 to-slate-800 items-center justify-end gap-x-4 px-4 py-4 sm:flex-row md:h-20">
             <div className="text-gray-200 text-lg">{props.usn.includes("@")?props.usn:currUser.u_name}</div>
             <div>
                 <button title="Profile" class="flex h-10 w-10 items-center justify-center rounded-xl border text-gray-300" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -38,7 +38,7 @@ export default function Header(props){
                 }
             </div>
             <div>
-                <button title="Logout" onClick={()=>nav('/')} class="flex h-10 w-10 items-center justify-center fa fa-sign-out text-gray-200 text-lg rounded-xl border text-gray-300"></button>
+                <button title="Logout" onClick={()=>{props.usn.includes("@")?nav('/adminLogin'):nav('/')}} class="flex h-10 w-10 items-center justify-center fa fa-sign-out text-gray-200 text-lg rounded-xl border text-gray-300"></button>
             </div>
         </header>
     )

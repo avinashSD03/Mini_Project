@@ -30,7 +30,7 @@ export default function Department(){
             <NavBar usn={usn}/>
                 <div class="flex h-full w-full flex-col">
                     <Header usn={usn}/>
-                    <main id="dashboard-main" class="h-[calc(100vh-10rem)] ml-[calc(100vh-24rem)] mt-[calc(100vh-38rem)] overflow-auto px-4 py-10">
+                    <main id="dashboard-main" class="md:h-[calc(100vh-10rem)] md:ml-[calc(100vh-26rem)] md:mt-[calc(100vh-40rem)] sm:h-[calc(100vh-10rem)] sm:ml-[calc(100vh-42rem)] sm:mt-[calc(100vh-40rem)] overflow-auto px-4 py-10">
                     <nav aria-label="breadcrumb" className="flex w-fit m-4 p-2 border rounded-2xl bg-gradient-to-l from-slate-800 to-violet-900">
                         <ol className="breadcrumb my-2">
                             <button className="text-gray-300" onClick={()=>{nav('/home',{state:usn})}}>Semester &gt;</button>

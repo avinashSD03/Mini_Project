@@ -79,7 +79,7 @@ export default function My_Uploads(){
         <div class="flex h-full w-full flex-col">
             
             <Header usn={usn} />
-            <main id="dashboard-main" class="h-[calc(100vh-10rem)] ml-[calc(100vh-24rem)] mt-[calc(100vh-38rem)] overflow-auto px-4 py-10">
+            <main id="dashboard-main" class="md:h-[calc(100vh-10rem)] md:ml-[calc(100vh-26rem)] md:mt-[calc(100vh-40rem)] sm:h-[calc(100vh-10rem)] sm:ml-[calc(100vh-42rem)] sm:mt-[calc(100vh-40rem)] overflow-auto px-4 py-10">
             <div class="flex flex-wrap gap-x-20 gap-y-12 p-4">
                 {myupload.map(upload=>{
                     const name_with_extension=upload.up_filename.split('_')[1]
