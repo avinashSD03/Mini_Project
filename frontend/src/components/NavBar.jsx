@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Logo from '../logoG.jpeg';
 
 export default function NavBar(props){
 
@@ -25,10 +26,10 @@ export default function NavBar(props){
                 </svg>
                 </label>
                 <nav aria-label="Sidebar Navigation" class="peer-checked:w-64 left-0 z-10 flex h-screen w-0 flex-col overflow-hidden bg-gradient-to-l from-slate-800 to-violet-900 text-white transition-all md:h-screen md:w-64 lg:w-72">
-                    <span className="mr-2 text-4xl text-violet-500">
-                        {/* <img src={logo} alt='logo'/> */}
+                    <span className="mr-2 mt-4 text-4xl text-violet-500">
+                        <img src={Logo} alt='logo' className="md:h-26 md:w-50 md:rounded-3xl md:ml-24 sm:h-20 sm:w-30 sm:rounded-full sm:ml-6" />
                     </span>
-                    <div onClick={()=> !usn.includes("@")?nav('/home',{state:usn}):null} class="mt-16 cursor-pointer text-3xl text-gray-300 py-8 pl-10">
+                    <div onClick={()=> !usn.includes("@")?nav('/home',{state:usn}):null} class="cursor-pointer text-3xl text-gray-300 py-8 pl-10">
                         EngineerEase
                     </div>
                     {!usn.includes("@")?
